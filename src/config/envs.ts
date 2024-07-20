@@ -13,10 +13,10 @@ interface EnvVars {
 const envsSchema: joi.Schema<EnvVars> = joi
   .object({
     PORT: joi.number().required(),
-    PRODUCTS_MICROSERVICE_HOST: joi.string().required(),
+    /* PRODUCTS_MICROSERVICE_HOST: joi.string().required(),
     PRODUCTS_MICROSERVICE_PORT: joi.number().required(),
     ORDERS_MICROSERVICE_HOST: joi.string().required(),
-    ORDERS_MICROSERVICE_PORT: joi.number().required(),
+    ORDERS_MICROSERVICE_PORT: joi.number().required(), */
     NATS_SERVERS: joi.array().items(joi.string()).required(),
   })
   .unknown(true);
