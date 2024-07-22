@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { envs } from './config';
 import { Logger, ValidationPipe } from '@nestjs/common';
-import { RcpCustomExceptionFilter } from './common';
+import { RpcCustomExceptionFilter } from './common';
 
 async function bootstrap() {
   const logger = new Logger('Main-Gateway');
@@ -20,7 +20,7 @@ async function bootstrap() {
     }),
   );
 
-  app.useGlobalFilters(new RcpCustomExceptionFilter());
+  app.useGlobalFilters(new RpcCustomExceptionFilter());
 
   await app.listen(envs.port);
 
